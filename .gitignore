@@ -1,0 +1,4 @@
+venv
+init.bat
+.env
+node_modules
