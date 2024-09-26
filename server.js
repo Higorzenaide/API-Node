@@ -13,5 +13,4 @@ app.use(routes)
 // O resto do seu código
 app.listen(3000, () => {
     console.log('Servidor Executando');
-    console.log('http://localhost:3000');
 });
