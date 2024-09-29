@@ -38,7 +38,7 @@ app.use(validarChaveApi);
 app.use(routes);
 
 // Obter a porta do .env ou usar 3000 como padrão
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5172;
 
 // Iniciar o servidor
 app.listen(PORT, () => {
