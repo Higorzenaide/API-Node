@@ -12,6 +12,7 @@ export const validarChaveApi = async (req, res, next) => {
     if (apiKey !== key) {
         return res.status(400).json({ error: 'Parans authorization inválido' });
     }
+    next()
 };
 
 export const tutorial = async (req, res, next) =>{
