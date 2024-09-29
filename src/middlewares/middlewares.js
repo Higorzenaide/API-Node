@@ -7,10 +7,14 @@ export const validarChaveApi = async (req, res, next) => {
     const apiKey = req.headers['authorization'];
 
     if (!apiKey) {
-        return res.status(400).json({ error: 'authorization não fornecido.' });
+        return tutorial(req, res, next); // Chame o tutorial passando req e res
     }
     if (apiKey !== key) {
         return res.status(400).json({ error: 'Parans authorization inválido' });
     }
-    next();
 };
+
+export const tutorial = async (req, res, next) =>{
+    res.render('index');
+}
+

@@ -1,0 +1,87 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentação da API</title>
+    <link rel="stylesheet" href="/style.css">  <!-- Link para o seu style.css -->
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">TUTORIAL DA API</h1>
+        
+        <h3>Autenticação</h3>
+        <p>Para fazer requisições à API, você deve incluir o seguinte cabeçalho de autorização:</p>
+        <pre><code>Authorization: gbyuferbei3tg724r27293ufb</code></pre>
+
+        <h3>Rotas Disponíveis</h3>
+        
+        <h4>1. Criar Usuário</h4>
+        <p><strong>POST /usuarios</strong></p>
+        <p>Este endpoint permite a criação de um novo usuário. O corpo da requisição deve ser um JSON com os seguintes campos:</p>
+        <ul>
+            <li><code>name</code>: Nome do usuário</li>
+            <li><code>age</code>: Idade do usuário</li>
+            <li><code>email</code>: Email do usuário</li>
+            <li><code>phone</code>: Telefone do usuário</li>
+            <li><code>address</code>: Endereço do usuário</li>
+            <li><code>cpf</code>: CPF do usuário</li>
+            <li><code>birth_date</code>: Data de nascimento do usuário</li>
+            <li><code>job_position</code>: Cargo do usuário</li>
+        </ul>
+        <p>Exemplo de requisição:</p>
+        <pre><code>
+POST /usuarios
+Headers: 
+    Authorization: gbyuferbei3tg724r27293ufb
+Body: 
+{
+    "name": "João Silva",
+    "age": 30,
+    "email": "joao.silva@example.com",
+    "phone": "1234567890",
+    "address": "Rua A, 123",
+    "cpf": "123.456.789-00",
+    "birth_date": "1990-01-01",
+    "job_position": "Desenvolvedor"
+}
+        </code></pre>
+
+        <h4>2. Obter Usuários</h4>
+        <p><strong>GET /usuarios/:name?</strong></p>
+        <p>Este endpoint retorna todos os usuários se nenhum nome for fornecido, ou um usuário específico se o nome for fornecido na URL.</p>
+        <p>Exemplo de requisição para obter todos os usuários:</p>
+        <pre><code>
+GET /usuarios
+Headers: 
+    Authorization: gbyuferbei3tg724r27293ufb
+        </code></pre>
+        <p>Exemplo de requisição para obter um usuário específico:</p>
+        <pre><code>
+GET /usuarios/João
+Headers: 
+    Authorization: gbyuferbei3tg724r27293ufb
+        </code></pre>
+
+        <h4>3. Atualizar Usuário</h4>
+        <p><strong>PUT /usuarios/:id</strong></p>
+        <p>Este endpoint permite atualizar os dados de um usuário existente. Você deve fornecer o ID do usuário na URL e o corpo da requisição deve conter os dados que deseja atualizar.</p>
+        <p>Exemplo de requisição:</p>
+        <pre><code>
+PUT /usuarios/1
+Headers: 
+    Authorization: gbyuferbei3tg724r27293ufb
+Body: 
+{
+    "name": "João Silva",
+    "age": 31
+}
+        </code></pre>
+
+        <h3>Respostas da API</h3>
+        <p>A API retornará respostas em formato JSON, incluindo mensagens de sucesso ou detalhes de erro conforme apropriado.</p>
+
+        <footer class="mt-5">
+            <p>Higor Zandaide - © 2024 API Documentation</p>
+        </footer>
+    </div>
+</body>
+</html>

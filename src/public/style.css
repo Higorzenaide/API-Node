@@ -1,0 +1,90 @@
+/* Reset básico para remover margens e preenchimentos padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilizando o corpo */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f4f8; /* Uma cor de fundo mais suave */
+    color: #333;
+    padding: 20px;
+}
+
+/* Container principal */
+.container {
+    max-width: 800px;
+    margin: 20px auto; /* Margem superior para espaçamento */
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+}
+
+/* Estilizando o cabeçalho do tutorial */
+h1 {
+    text-align: center;
+    color: #007BFF; /* Azul */
+    margin-bottom: 10px;
+    font-size: 2.5em; /* Tamanho de fonte maior para o título */
+}
+
+h3 {
+    color: #333;
+    margin: 20px 0 10px;
+    font-size: 1.5em; /* Tamanho de fonte maior para subtítulos */
+}
+
+h4 {
+    color: #555;
+    margin: 15px 0 5px;
+    font-size: 1.2em; /* Tamanho de fonte para subtítulos menores */
+}
+
+p {
+    margin: 10px 0;
+}
+
+/* Estilizando o código */
+code {
+    background-color: #e7f0ff; /* Cor de fundo suave para código */
+    border-radius: 4px;
+    padding: 4px 6px; /* Mais espaço interno */
+    font-family: 'Courier New', Courier, monospace; /* Fonte monoespaçada */
+}
+
+/* Destaque para blocos de código */
+pre {
+    background-color: #f8f9fa; /* Fundo claro para blocos de código */
+    border-radius: 4px;
+    padding: 15px;
+    overflow: auto;
+    border-left: 4px solid #007BFF; /* Borda esquerda para destaque */
+}
+
+/* Estilizando listas */
+ul {
+    margin-left: 20px;
+    margin-bottom: 20px; /* Espaçamento inferior nas listas */
+}
+
+/* Links com hover */
+a {
+    color: #007BFF; /* Azul para links */
+    text-decoration: none; /* Remove sublinhado */
+}
+
+a:hover {
+    text-decoration: underline; /* Sublinha ao passar o mouse */
+}
+
+/* Estilizando o rodapé */
+footer {
+    margin-top: 30px; /* Maior espaçamento superior */
+    font-size: 0.9em;
+    color: #666;
+    text-align: center; /* Centraliza o texto do rodapé */
+}

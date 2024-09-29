@@ -3,6 +3,9 @@ import conectionSupabase from './src/models/CreateClient.js'
 import CreatUser from './src/models/CreateUser.js'
 import viewUser from './src/models/viewClients.js'
 import editUser from './src/models/editClient.js'
+import { tutorial } from './src//middlewares/middlewares.js'
+
+
 const route = express.Router();
 
 
@@ -78,5 +81,7 @@ route.put('/usuarios/:id', async (req, res) => {
         res.status(500).json({ error: 'Erro ao atualizar o usuário', details: e.message });
     }
 });
+
+route.get('/', tutorial)
 
 export default route;
