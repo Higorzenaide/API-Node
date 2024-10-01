@@ -86,7 +86,7 @@ route.get('/', tutorial)
 
 route.get('/manterServico', async (request, response) => {
     const ip = request.headers['x-forwarded-for'] || request.ip;
-    console.log(`IP do cliente: ${ip}`);
+    console.log(`IP do cliente: ${ip} E o serviço foi mantido`);
     response.status(200).json({ message: 'Serviço mantido' });
 });
 export default route;
