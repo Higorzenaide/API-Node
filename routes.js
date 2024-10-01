@@ -85,6 +85,7 @@ route.put('/usuarios/:id', async (req, res) => {
 route.get('/', tutorial)
 
 route.get('/manterServico', async(request,response) => {
+    console.log(`IP do cliente: ${request.ip} SERVIÇO MANTIDO`);
     response.status(200).json({ message: 'Serviço mantido' });
 })
 
