@@ -84,9 +84,9 @@ route.put('/usuarios/:id', async (req, res) => {
 
 route.get('/', tutorial)
 
-route.get('/manterServico', async(request,response) => {
-    console.log(`IP do cliente: ${request.ip} SERVIÇO MANTIDO`);
+route.get('/manterServico', async (request, response) => {
+    const ip = request.headers['x-forwarded-for'] || request.ip;
+    console.log(`IP do cliente: ${ip}`);
     response.status(200).json({ message: 'Serviço mantido' });
-})
-
+});
 export default route;
