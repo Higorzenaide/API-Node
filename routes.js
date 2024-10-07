@@ -3,6 +3,7 @@ import conectionSupabase from './src/models/CreateClient.js'
 import CreatUser from './src/models/CreateUser.js'
 import viewUser from './src/models/viewClients.js'
 import editUser from './src/models/editClient.js'
+import createUsersPermissions from './src/models/createUsersPermissions.js'
 import { tutorial } from './src//middlewares/middlewares.js'
 
 
@@ -87,6 +88,46 @@ route.get('/', tutorial)
 route.get('/manterServico', async(request,response) => {
     console.log(`IP do cliente: ${request.ip} SERVIÇO Mantido`);
     response.status(200).json({ message: 'Serviço mantido' });
+})
+
+route.post('/inserirUsersProject', async(request,response) => {
+    const { name, 
+        age, 
+        email, 
+        phone, 
+        address, 
+        cpf, 
+        birth_date, 
+        job_position,
+        editPermission,
+        deletePermission,
+        insertPermission, 
+        createPermission} = request.body;
+
+    const user = new createUsersPermissions(
+        conectionSupabase,
+        name,
+        age,
+        email,
+        phone,
+        address,
+        cpf,
+        birth_date,
+        job_position,
+        editPermission,
+        deletePermission,
+        insertPermission,
+        createPermission
+    );
+
+    // Espera a inserção do usuário e envia a resposta apropriada
+    try {
+        await user.insertUser(); // Chama explicitamente o método insertUser
+        response.status(201).json({ message: 'Usuário criado com sucesso' });
+    } catch (e) {
+        console.error('Erro ao tentar criar o usuário:', e);
+        response.status(500).json({ error: 'Erro ao criar o usuário', details: e.message });
+    }
 })
 
 export default route;
