@@ -71,6 +71,7 @@ route.get('/usuarios/:name?', async(req,res) => {
 route.put('/usuarios/:id', async (req, res) => {
     const userId = req.params.id;
     const userData = req.body; // Pega os dados do corpo da requisição
+    console.log(userData, `User Data`)
 
     const user = new editUser(conectionSupabase, userData);
 
